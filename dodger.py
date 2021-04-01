@@ -38,6 +38,11 @@ pygame.mouse.set_visible(False)
 
 font = pygame.font.SysFont(None, 48)
 
+#plaatjes
+otte_plaatje = pygame.image.load('ottertje2.png')
+plaatje_raakvlak = otte_plaatje.get_rect()
+plaatje_slechterik = pygame.image.load('mariothwomp.png')
+
 #startscherm display + speler moet klikken
 tekst('Dodger', font, scherm, (scherm_breedte / 3) + 70, (scherm_hoogte / 3))
 tekst('Klik om te beginnen', font, scherm, (scherm_breedte / 3) - 10, (scherm_hoogte / 3) + 70)
