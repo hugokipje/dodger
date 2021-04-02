@@ -57,6 +57,7 @@ font = pygame.font.SysFont(None, 48)
 otte_plaatje = pygame.image.load('ottertje2.png')
 plaatje_raakvlak = otte_plaatje.get_rect()
 plaatje_slechterik = pygame.image.load('mariothwomp.png')
+bg = pygame.image.load("space.jpg")
 
 #geluid
 gameovergeluid = pygame.mixer.Sound('gameover.wav')
@@ -168,7 +169,7 @@ while True:
             if b['rect'].top > scherm_hoogte:
                 slechterik.remove(b)
 
-        scherm.fill(achtergrond)
+        scherm.blit(bg, [0, 0])
 
         #score + top-score
         tekst('Score: %s' % (score), font, scherm, 10, 0)
