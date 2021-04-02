@@ -29,6 +29,13 @@ def klikscherm():
                     eindigen()
                 return
 
+#functie otte raakt slechterik
+def boem(plaatje_raakvlak, slechterik):
+    for b in slechterik:
+        if plaatje_raakvlak.colliderect(b['rect']):
+            return True
+    return False
+
 #scherm en in-game klok
 pygame.init()
 ingameklok = pygame.time.Clock()
@@ -42,6 +49,10 @@ font = pygame.font.SysFont(None, 48)
 otte_plaatje = pygame.image.load('ottertje2.png')
 plaatje_raakvlak = otte_plaatje.get_rect()
 plaatje_slechterik = pygame.image.load('mariothwomp.png')
+
+#geluid
+gameovergeluid = pygame.mixer.Sound('gameover.wav')
+pygame.mixer.music.load('background2.mid')
 
 #startscherm display + speler moet klikken
 tekst('Dodger', font, scherm, (scherm_breedte / 3) + 70, (scherm_hoogte / 3))
