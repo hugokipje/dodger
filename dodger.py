@@ -127,6 +127,8 @@ while True:
                 #je kan nu ook met muis besturen
                 plaatje_raakvlak.move_ip(event.pos[0] - plaatje_raakvlak.centerx, event.pos[1] - plaatje_raakvlak.centery)
 
+        pygame.mouse.set_pos(plaatje_raakvlak.centerx, plaatje_raakvlak.centery)        
+
         #zorgen dat het beweegt
         if moveLeft and plaatje_raakvlak.left > 0:
             plaatje_raakvlak.move_ip(-1 * snelheid_otte, 0)
