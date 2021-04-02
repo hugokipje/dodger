@@ -5,6 +5,7 @@ from pygame.locals import *
 scherm_breedte = 1000
 scherm_hoogte = 1000
 tekstkleur = (255, 255, 255)
+achtergrond = (21, 67, 96)
 min_grootte_slechterik = 10
 max_grootte_slechterik = 40
 min_snelheid_slechterik = 1
@@ -165,3 +166,9 @@ while True:
         for b in slechterik[:]:
             if b['rect'].top > scherm_hoogte:
                 slechterik.remove(b)
+
+        scherm.fill(achtergrond)
+
+        #score + top-score
+        tekst('Score: %s' % (score), font, scherm, 10, 0)
+        tekst('Top Score: %s' % (top_score), font, scherm, 10, 40)
