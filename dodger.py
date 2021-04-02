@@ -60,3 +60,19 @@ tekst('Klik om te beginnen', font, scherm, (scherm_breedte / 3) - 10, (scherm_ho
 tekst('Door: Joris, Otte, Lucas en Hugo', font, scherm, (scherm_breedte / 3) - 100, (scherm_hoogte / 3) + 140)
 pygame.display.update()
 klikscherm()
+
+top_score = 0
+
+#start van het spel
+while True:
+    slechterik = []
+    score = 0
+    plaatje_raakvlak.topleft = (scherm_breedte / 2, scherm_hoogte - 50)
+    moveLeft = moveRight = moveUp = moveDown = False
+    reverseCheat = slowCheat = False
+    slechterik_toevoegen = 0
+    pygame.mixer.music.play(-1, 0.0)
+    
+    #alleen als je de game aan het spelen bent
+    while True: 
+        score += 1 
