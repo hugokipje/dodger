@@ -151,3 +151,12 @@ while True:
                          }
 
             slechterik.append(nieuwe_slechterik)
+
+        #zorgen dat slechteriken bewegen
+        for b in slechterik:
+            if not reverseCheat and not slowCheat:
+                b['rect'].move_ip(0, b['speed'])
+            elif reverseCheat:
+                b['rect'].move_ip(0, -5)
+            elif slowCheat:
+                b['rect'].move_ip(0, 1)
