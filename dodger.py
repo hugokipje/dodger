@@ -190,3 +190,14 @@ while True:
             break
 
         ingameklok.tick(fps)
+
+    #game-over + scherm daarvoor
+    pygame.mixer.music.stop()
+    gameovergeluid.play()
+
+    tekst('GAME OVER :-(', font, scherm, (scherm_breedte / 3), (scherm_hoogte / 3))
+    tekst('Klik om opnieuw te beginnen', font, scherm, (scherm_breedte / 3) - 80, (scherm_hoogte / 3) + 50)
+    pygame.display.update()
+    klikscherm()
+
+    gameovergeluid.stop()
