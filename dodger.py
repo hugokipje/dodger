@@ -172,3 +172,12 @@ while True:
         #score + top-score
         tekst('Score: %s' % (score), font, scherm, 10, 0)
         tekst('Top Score: %s' % (top_score), font, scherm, 10, 40)
+
+        #goeierik tekenen
+        scherm.blit(otte_plaatje, plaatje_raakvlak)
+
+        #slechterik tekenen
+        for b in slechterik:
+            scherm.blit(b['surface'], b['rect'])
+
+        pygame.display.update()
