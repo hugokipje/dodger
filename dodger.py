@@ -5,6 +5,11 @@ from pygame.locals import *
 scherm_breedte = 1000
 scherm_hoogte = 1000
 tekstkleur = (255, 255, 255)
+min_grootte_slechterik = 10
+max_grootte_slechterik = 40
+min_snelheid_slechterik = 1
+max_snelheid_slechterik = 8
+frequentie_slechteriken = 6
 
 #functie voor eindigen spel
 def eindigen():
@@ -118,5 +123,18 @@ while True:
                     moveDown = False
 
             if event.type == MOUSEMOTION:
-                # If the mouse moves, move the player where the cursor is.
+                #je kan nu ook met muis besturen
                 plaatje_raakvlak.move_ip(event.pos[0] - plaatje_raakvlak.centerx, event.pos[1] - plaatje_raakvlak.centery)
+
+        #nieuwe slechteriken
+        if not reverseCheat and not slowCheat:
+            slechterik_toevoegen += 1
+        if slechterik_toevoegen == frequentie_slechteriken:
+            slechterik_toevoegen = 0
+            slechterik_grootte = random.randint(min_grootte_slechterik, max_grootte_slechterik)
+            nieuwe_slechterik = {'rect': pygame.Rect(random.randint(0, scherm_breedte-slechterik_grootte), 0 - slechterik_grootte, slechterik_grootte, slechterik_grootte),
+                         'speed': random.randint(min_snelheid_slechterik, max_snelheid_slechterik),
+                         'surface': pygame.transform.scale(plaatje_slechterik, (slechterik_grootte, slechterik_grootte)),
+                         }
+
+            slechterik.append(nieuwe_slechterik)
