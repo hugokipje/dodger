@@ -12,6 +12,7 @@ min_snelheid_slechterik = 1
 max_snelheid_slechterik = 8
 frequentie_slechteriken = 6
 snelheid_otte = 5
+fps = 60
 
 #functie voor eindigen spel
 def eindigen():
@@ -181,3 +182,11 @@ while True:
             scherm.blit(b['surface'], b['rect'])
 
         pygame.display.update()
+
+        #goeierik raakt slechterik
+        if boem(plaatje_raakvlak, slechterik):
+            if score > top_score:
+                top_score = score 
+            break
+
+        ingameklok.tick(fps)
