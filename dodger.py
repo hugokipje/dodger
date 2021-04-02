@@ -54,7 +54,7 @@ pygame.mouse.set_visible(False)
 font = pygame.font.SysFont(None, 48)
 
 #plaatjes
-otte_plaatje = pygame.image.load('ottertje2.png')
+otte_plaatje = pygame.image.load('babyotte.jpg')
 plaatje_raakvlak = otte_plaatje.get_rect()
 plaatje_slechterik = pygame.image.load('mariothwomp.png')
 bg = pygame.image.load("space.jpg")
