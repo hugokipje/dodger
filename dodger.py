@@ -160,3 +160,8 @@ while True:
                 b['rect'].move_ip(0, -5)
             elif slowCheat:
                 b['rect'].move_ip(0, 1)
+
+        #zorgen dat slechteriken verdwijnen
+        for b in slechterik[:]:
+            if b['rect'].top > scherm_hoogte:
+                slechterik.remove(b)
