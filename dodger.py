@@ -10,6 +10,7 @@ max_grootte_slechterik = 40
 min_snelheid_slechterik = 1
 max_snelheid_slechterik = 8
 frequentie_slechteriken = 6
+snelheid_otte = 5
 
 #functie voor eindigen spel
 def eindigen():
@@ -125,6 +126,16 @@ while True:
             if event.type == MOUSEMOTION:
                 #je kan nu ook met muis besturen
                 plaatje_raakvlak.move_ip(event.pos[0] - plaatje_raakvlak.centerx, event.pos[1] - plaatje_raakvlak.centery)
+
+        #zorgen dat het beweegt
+        if moveLeft and plaatje_raakvlak.left > 0:
+            plaatje_raakvlak.move_ip(-1 * snelheid_otte, 0)
+        if moveRight and plaatje_raakvlak.right < scherm_breedte:
+            plaatje_raakvlak.move_ip(snelheid_otte, 0)
+        if moveUp and plaatje_raakvlak.top > 0:
+            plaatje_raakvlak.move_ip(0, -1 * snelheid_otte)
+        if moveDown and plaatje_raakvlak.bottom < scherm_hoogte:
+            plaatje_raakvlak.move_ip(0, snelheid_otte)
 
         #nieuwe slechteriken
         if not reverseCheat and not slowCheat:
