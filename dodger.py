@@ -60,8 +60,8 @@ plaatje_slechterik = pygame.image.load('mariothwomp.png')
 bg = pygame.image.load("space.jpg")
 
 #geluid
-gameovergeluid = pygame.mixer.Sound('gameover.wav')
-pygame.mixer.music.load('background2.mid')
+# gameovergeluid = pygame.mixer.Sound('gameover.wav')
+# pygame.mixer.music.load('background2.mid')
 
 #startscherm display + speler moet klikken
 tekst('Dodger', font, scherm, (scherm_breedte / 3) + 70, (scherm_hoogte / 3))
@@ -80,7 +80,7 @@ while True:
     moveLeft = moveRight = moveUp = moveDown = False
     reverseCheat = slowCheat = False
     slechterik_toevoegen = 0
-    pygame.mixer.music.play(-1, 0.0)
+    # pygame.mixer.music.play(-1, 0.0)
 
     while True: 
         score += 1 
@@ -193,12 +193,12 @@ while True:
         ingameklok.tick(fps)
 
     #game-over + scherm daarvoor
-    pygame.mixer.music.stop()
-    gameovergeluid.play()
+    # pygame.mixer.music.stop()
+    # gameovergeluid.play()
 
     tekst('GAME OVER :-(', font, scherm, (scherm_breedte / 3), (scherm_hoogte / 3))
     tekst('Klik om opnieuw te beginnen', font, scherm, (scherm_breedte / 3) - 80, (scherm_hoogte / 3) + 50)
     pygame.display.update()
     klikscherm()
 
-    gameovergeluid.stop()
+    # gameovergeluid.stop()
